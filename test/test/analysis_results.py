@@ -79,3 +79,11 @@ trackers = []
 # trackers.extend(trackerlist(name='ECO_deep', parameter_name='vitb_384_mae_ce_32x4_ep300', dataset_name=dataset_name, run_ids=None, display_name='ECO_deep'))
 # trackers.extend(trackerlist(name='Siamese_FC', parameter_name='vitb_384_mae_ce_32x4_ep300', dataset_name=dataset_name, run_ids=None, display_name='Siamese_FC'))
 # trackers.extend(trackerlist(name='UDT', parameter_name='vitb_384_mae_ce_32x4_ep300', dataset_name=dataset_name, run_ids=None, display_name='UDT'))
+
+
+dataset = get_dataset(dataset_name)
+# dataset = get_dataset('otb', 'nfs', 'uav', 'tc128ce')
+# plot_results(trackers, dataset, 'OTB2015', merge_results=True, plot_types=('success', 'norm_prec'),
+#              skip_missing_seq=False, force_evaluation=True, plot_bin_gap=0.05)
+print_results(trackers, dataset, dataset_name, merge_results=True, plot_types=('success', 'norm_prec', 'prec'))
+# print_results(trackers, dataset, 'UNO', merge_results=True, plot_types=('success', 'prec'))
